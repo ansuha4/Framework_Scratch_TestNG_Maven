@@ -1,6 +1,5 @@
 package anusha.pageObject;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,9 +29,9 @@ public class cartPage extends AbstractComponent{
         return match;
     }
 
-    public CheckOutPage checkOut(){
+    public void checkOut(){
         cartButton.click();
-       CheckOutPage cop =  new CheckOutPage();
-       return cop;
+      // CheckOutPage cop =  new CheckOutPage();
+     //  return cop;
     }
 }

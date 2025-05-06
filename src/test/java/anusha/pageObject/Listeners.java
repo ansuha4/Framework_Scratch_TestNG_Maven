@@ -11,6 +11,7 @@ import java.io.IOException;
 public class Listeners extends BaseTest implements ITestListener {
 ExtentReports extent;
 ExtentTest test;
+String path;
     @Override
     public void onTestStart(ITestResult result){
         extent.createTest(path);
@@ -27,12 +28,7 @@ ExtentTest test;
 //screenshot, attach it to the report
         test.fail(result.getThrowable());
         String filepath = null;
-        try{
-            filepath = getScreenshot(result.getMethod().getMethodName());
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
+        filepath = getScreenshot(result.getMethod().getMethodName());
         test.addScreenCaptureFromPath(filepath, result.getMethod().getMethodName());
     }
 
